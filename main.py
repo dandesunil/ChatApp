@@ -13,13 +13,17 @@ from config import *
 os.makedirs(CODE_DIR, exist_ok=True)
 
 # Initialize Answerer
-answerer = Answerer(chroma_dir=CHROMA_DIR)
+# answerer = Answerer(chroma_dir=CHROMA_DIR)
 
 # FastAPI app
 app = FastAPI()
 
-ingest_document(DEFAULT_PDF, chroma_dir=CHROMA_DIR) # Ingest on startup
-
+# ingest_document(DEFAULT_PDF, chroma_dir=CHROMA_DIR) # Ingest on startup
+@app.post("/create_embeddings")
+async def create_embeddings(request: Request):
+    """Create embeddings for a given file"""
+    ingest_document(DEFAULT_PDF, chroma_dir=CHROMA_DIR)
+    return JSONResponse({"message": "embeddings created"}, status_code=200)
 
 
 @app.post("/chat")
@@ -28,6 +32,8 @@ async def chat(request_data: Chat):
     q = payload.get("query")
     if not q:
         return JSONResponse({"error": "no query"}, status_code=400)
+    # Initialize Answerer
+    answerer = Answerer(chroma_dir=CHROMA_DIR)
     resp = answerer.answer(q)
     print(f'resp:   {resp}')
     return JSONResponse({"answer": resp})

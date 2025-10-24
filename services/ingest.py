@@ -3,12 +3,12 @@ from fastapi import FastAPI, Request, UploadFile, File
 from typing import List
 from langchain.embeddings import SentenceTransformerEmbeddings
 from langchain.vectorstores import Chroma
-from utils.chunker import chunk_text
 import pdfplumber
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 from config import *
+from services.llm import get_embedding_model
 
 def read_text_file(path: str) -> str:
     with open(path, 'r', encoding='utf-8', errors='ignore') as f:
@@ -30,12 +30,7 @@ def ingest_document(path: str, chroma_dir: str = CHROMA_DIR) -> None:
     os.makedirs(chroma_dir, exist_ok=True)
     loader = PyPDFLoader(path)
     documents = loader.load()  # returns list[Document]
-    # chunks = recursive_chunking(documents, chunk_size=500, overlap=100)
-    # texts, metadatas = [], []
-    # for i, c in enumerate(chunks):
-    #     texts.append(c)
-    #     metadatas.append({"source": os.path.basename(path), "chunk": i})
-    embed = SentenceTransformerEmbeddings(model_name=EMBEDDING_MODEL)
+    embed = get_embedding_model(EMBEDDING_MODEL)
     db = Chroma.from_documents(documents, embedding=embed, persist_directory=chroma_dir)
     db.persist()
     

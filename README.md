@@ -19,8 +19,8 @@ This solves the problem of enabling **private, document-specific conversational 
 | **Backend Framework** | [FastAPI](https://fastapi.tiangolo.com/) | Fast ASGI framework; modern alternative to FastAPI with great async support and templating. |
 | **LLM Orchestration** | [LangChain](https://www.langchain.com/) | Provides standardized chains, retrievers, and memory for RAG pipelines. |
 | **Vector Store** | [ChromaDB](https://www.trychroma.com/) | Local, simple, and fast vector database to store document embeddings. |
-| **Embedding Model** | [Sentence-Transformers (all-MiniLM-L6-v2)] | Creates compact, high-quality embeddings for semantic retrieval. |
-| **LLM Model** | [HuggingFace Transformers - flan-t5-small] | Open-source lightweight model for question answering and summarization. |
+| **Embedding Model** | [BAAI/bge-base-en-v1.5 [https://huggingface.co/BAAI/bge-base-en-v1.5]] | Trained on massive English corpus for semantic retrieval and RAG scenarios. |
+| **LLM Model** | mistralai/Mistral-7B-Instruct-v0.2[https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2 | Open-source lightweight model for question answering and summarization.Mistral is faster and cheaper to run for retrieval-augmented pipelines |
 | **Package Manager** | [uv](https://github.com/astral-sh/uv) | Fast modern Python environment and dependency manager. |
 
 ### ⚙️ Why These Were Chosen
