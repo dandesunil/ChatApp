@@ -1,0 +1,23 @@
+[project]
+name = "rag-chatbot"
+version = "0.1.0"
+description = "RAG-based chatbot using Starlite, LangChain, and open-source LLMs"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "uvicorn>=0.22.0",
+    "langchain>=0.0.400",
+    "chromadb>=0.3.29",
+    "transformers>=4.34.0",
+    "sentence-transformers>=2.2.2",
+    "python-multipart>=0.0.6",
+    "aiofiles>=23.1.0",
+    "tqdm",
+    "starlite>=1.51.12",
+    "pydantic>=2.0",
+    "langchain-community>=0.2.5",
+    "langchain-huggingface>=0.0.3",
+    "fastapi>=0.120.0",
+    "pdfplumber>=0.11.7",
+    "pypdf>=6.1.3",
+]
