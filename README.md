@@ -34,7 +34,7 @@ This solves the problem of enabling **private, document-specific conversational 
 ### 🧩 Possible Alternatives
 | Function | Alternatives |
 |-----------|---------------|
-| Web Framework | **FastAPI**, **Quart**, **Sanic** |
+| Web Framework | **FastAPI**|
 | Vector DB | **FAISS**, **Milvus**, **Weaviate**, **Pinecone** (managed) |
 | Embeddings | **InstructorEmbeddings**, **E5 models**, **OpenAI embeddings** (paid) |
 | LLMs | **Mistral**, **Llama 2**, **Phi-2**, **Mixtral**, or **llama.cpp** (for local inference) |
@@ -45,13 +45,13 @@ This solves the problem of enabling **private, document-specific conversational 
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Prerequisites
-- Python 3.9+
+- Python 3.12+
 - (Optional) [uv](https://github.com/astral-sh/uv) for fast environment setup.
 
 ### 2️⃣ Clone the repo
 ```bash
-git clone https://github.com/your-username/ragg-chat.git
-cd ragg-chat
+git clone https://github.com/dandesunil/ChatApp.git
+cd ChatApp
 ```
 
 ### 3️⃣ Create and activate environment
@@ -68,12 +68,12 @@ source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
 ### 4️⃣ Install dependencies
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ### 5️⃣ Run the application
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 
 The app will be available at:  
