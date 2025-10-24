@@ -15,8 +15,8 @@ This solves the problem of enabling **private, document-specific conversational 
 
 | Component | Library / Tool | Purpose |
 |------------|----------------|----------|
-| **Frontend UI** | [Starlite Templates + Vanilla JS] | Lightweight web UI for upload and chat. |
-| **Backend Framework** | [Starlite](https://starlite-api.github.io/starlite/) | Fast ASGI framework; modern alternative to FastAPI with great async support and templating. |
+| **Frontend UI** | [Starlite](https://starlite-api.github.io/starlite/) | Lightweight web UI for upload and chat. |
+| **Backend Framework** | [FastAPI](https://fastapi.tiangolo.com/) | Fast ASGI framework; modern alternative to FastAPI with great async support and templating. |
 | **LLM Orchestration** | [LangChain](https://www.langchain.com/) | Provides standardized chains, retrievers, and memory for RAG pipelines. |
 | **Vector Store** | [ChromaDB](https://www.trychroma.com/) | Local, simple, and fast vector database to store document embeddings. |
 | **Embedding Model** | [Sentence-Transformers (all-MiniLM-L6-v2)] | Creates compact, high-quality embeddings for semantic retrieval. |
