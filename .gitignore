@@ -15,3 +15,5 @@ venv/
 code/*
 logs/*
 chroma_db/*
+ChromaDB/*
+Testing.*

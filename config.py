@@ -6,7 +6,7 @@ load_dotenv()
 # Paths
 CODE_DIR = os.path.join(os.path.dirname(__file__), os.getenv("CODE_DIR_REL", "code"))
 CHROMA_DIR = os.path.join(os.getcwd(), os.getenv("CHROMA_DIR_REL", "chroma_db"))
-DEFAULT_PDF = os.path.join(os.getenv("CODE_DIR_REL", "code"), os.getenv("DEFAULT_PDF_NAME", "Resume.pdf"))
+DEFAULT_PDF = os.path.join(os.getenv("CODE_DIR_REL", "code"), os.getenv("DEFAULT_PDF_NAME", "eBook-How-to-Build-a-Career-in-AI.pdf"))
 
 # Server settings
 HOST = os.getenv("HOST", "0.0.0.0")

@@ -20,7 +20,7 @@ This solves the problem of enabling **private, document-specific conversational 
 | **LLM Orchestration** | [LangChain](https://www.langchain.com/) | Provides standardized chains, retrievers, and memory for RAG pipelines. |
 | **Vector Store** | [ChromaDB](https://www.trychroma.com/) | Local, simple, and fast vector database to store document embeddings. |
 | **Embedding Model** | [BAAI/bge-base-en-v1.5 [https://huggingface.co/BAAI/bge-base-en-v1.5]] | Trained on massive English corpus for semantic retrieval and RAG scenarios. |
-| **LLM Model** | mistralai/Mistral-7B-Instruct-v0.2[https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2 | Open-source lightweight model for question answering and summarization.Mistral is faster and cheaper to run for retrieval-augmented pipelines |
+| **LLM Model** | google/flan-t5-base[https://huggingface.co/google/flan-t5-base | Open-source lightweight model for question answering and summarization. Best for text to text generations |
 | **Package Manager** | [uv](https://github.com/astral-sh/uv) | Fast modern Python environment and dependency manager. |
 
 ### ⚙️ Why These Were Chosen
@@ -28,7 +28,7 @@ This solves the problem of enabling **private, document-specific conversational 
 - **LangChain**: Handles RAG orchestration elegantly (retrieval, memory, LLM integration).
 - **ChromaDB**: Simple to use, no server setup, ideal for local vector storage.
 - **Sentence-Transformers**: High accuracy sentence-level embeddings for search.
-- **flan-t5-small**: CPU-friendly open model with good reasoning and summarization ability.
+- **google/flan-t5-base**: CPU-friendly open model with good reasoning and summarization ability.
 - **uv**: Speeds up installs and isolates environments cleanly.
 
 ### 🧩 Possible Alternatives
